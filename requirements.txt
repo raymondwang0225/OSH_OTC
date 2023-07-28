@@ -3,3 +3,4 @@ streamlit
 pandas
 plost
 streamlit_lightweight_charts
+PyGithub
