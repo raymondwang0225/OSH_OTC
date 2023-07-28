@@ -20,11 +20,11 @@ def main():
     trade_type = st.selectbox("交易類型：", ["買單", "賣單"])
 
     if st.button("新增交易"):
-        add_transaction(transactions_df, order_id, price, quantity, trade_type)
+        transactions_df = add_transaction(transactions_df, order_id, price, quantity, trade_type)
         st.success("交易已添加！")
 
         # 更新 GitHub 上的交易數據
-        #update_transactions_on_github(transactions_df)
+        # update_transactions_on_github(transactions_df)
 
     # 保存更新後的數據
     save_data(transactions_df)
