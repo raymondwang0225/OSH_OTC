@@ -1,14 +1,13 @@
-from github import Github
 import pandas as pd
+from github import Github
 import io
 
 def update_transactions_on_github(transactions_df):
     # 設置 GitHub 倉庫相關信息
     repo_path = "raymondwang0225/OSH_OTC"
-    github_token = "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"
 
     # 使用 PyGithub 連接到 GitHub 倉庫
-    g = Github(github_token)
+    g = Github()
     repo = g.get_repo(repo_path)
 
     # 讀取 transactions.csv 文件內容
