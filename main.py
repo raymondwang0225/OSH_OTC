@@ -10,7 +10,7 @@ def main():
 
     # 顯示買賣單交易數據
     st.write("### 當前交易數據：")
-    st.dataframe(transactions_df)
+    table = st.dataframe(transactions_df)
 
     # 添加新的買賣單交易數據
     st.write("### 添加新的買賣單交易數據：")
@@ -24,7 +24,10 @@ def main():
         st.success("交易已添加！")
 
         # 更新 GitHub 上的交易數據
-        # update_transactions_on_github(transactions_df)
+        #update_transactions_on_github(transactions_df)
+
+        # 更新顯示的 DataFrame
+        table.data = transactions_df
 
     # 保存更新後的數據
     save_data(transactions_df)
