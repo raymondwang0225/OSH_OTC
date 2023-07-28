@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 
 def main():
-    st.title("OSH OTC交易平台")
+    st.title("買賣單交易數據")
 
     # 載入現有數據或創建新的 DataFrame
     transactions_df = load_data()
@@ -36,7 +36,7 @@ def load_data():
 def add_transaction(df, order_id, price, quantity, trade_type):
     # 將新的交易數據添加到 DataFrame
     new_row = {"掛單序號": order_id, "價格(USDT)": price, "數量(OSH)": quantity, "交易類型": trade_type}
-    df = df.append(new_row, ignore_index=True)
+    df = pd.concat([df, pd.DataFrame([new_row])], ignore_index=True)
     return df
 
 def save_data(df):
@@ -45,4 +45,3 @@ def save_data(df):
 
 if __name__ == "__main__":
     main()
-
