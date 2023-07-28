@@ -6,8 +6,8 @@ def update_transactions_on_github(transactions_df):
     # 設置 GitHub 倉庫相關信息
     repo_path = "raymondwang0225/OSH_OTC"
 
-    # 使用 PyGithub 連接到 GitHub 倉庫
-    g = Github()
+    # 使用 PyGithub 連接到 GitHub 倉庫，並指定提交者的帳戶和信箱
+    g = Github("raymondwang0225", "raymondwang0225@gmail.com")
     repo = g.get_repo(repo_path)
 
     # 讀取 transactions.csv 文件內容
