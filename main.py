@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 
 def main():
-    st.title("買賣單交易數據")
+    st.title("OSH OTC交易平台")
 
     # 載入現有數據或創建新的 DataFrame
     transactions_df = load_data()
