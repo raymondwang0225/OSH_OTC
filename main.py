@@ -1,5 +1,6 @@
 import streamlit as st
 import pandas as pd
+from update_transactions_on_github import update_transactions_on_github
 
 def main():
     st.title("買賣單交易數據")
@@ -21,6 +22,9 @@ def main():
     if st.button("新增交易"):
         add_transaction(transactions_df, order_id, price, quantity, trade_type)
         st.success("交易已添加！")
+
+        # 更新 GitHub 上的交易數據
+        update_transactions_on_github(transactions_df)
 
     # 保存更新後的數據
     save_data(transactions_df)
